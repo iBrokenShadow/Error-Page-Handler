@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^https://(.+\.)?your_site_name\.com/ [NC]
+RewriteRule .*\.(css)$ - [F]
+
+# Custom error pages
+ErrorDocument 403 /target/error/403.html
+ErrorDocument 404 /target/error/404.html
+
+# Make them same way as others just change the needed parameters
+ErrorDocument 400 /target/error/400.html
+ErrorDocument 401 /target/error/401.html
+ErrorDocument 500 /target/error/500.html
+ErrorDocument 502 /target/error/502.html
+ErrorDocument 503 /target/error/503.html
+
+
+# Credit : github.com/iBrokenShadow
